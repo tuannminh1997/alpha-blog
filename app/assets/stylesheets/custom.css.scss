@@ -1,0 +1,106 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.container {
+  margin-top: 40px;
+}
+.navbar {
+
+  background-color: #000000 !important;
+
+}
+
+.navbar a:hover{
+  color: #dc3545;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #dc3545;
+}
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+  color: #dc3545;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #dc3545;
+  text-decoration: none;
+}
+
+a.nav-link {
+  font-size: larger;
+}
+
+.navbar a {
+  color: black;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset_url("jumbotron.jpg");
+  background-size: cover;
+  background-position: top center;
+  height: 450px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+
+.btn-xlarge {
+  font-size: 1.2em;
+  background-color: black;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #dc3545;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer li {
+  float: left;
+  margin-left: 15px;
+}
+
+footer a {
+  color: #dc3545;
+}
+
+form.new_article, form.edit_article {
+  margin-top: 40px;
+}
