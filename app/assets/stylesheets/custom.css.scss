@@ -77,6 +77,14 @@ a.nav-link {
   background-color: black;
 }
 
+.article-action {
+  border-top: 1px solid #eaeaea;
+  padding-top: 20px;
+  align-self: center;
+}
+
+
+
 footer {
   margin-top: 50px;
   padding-top: 5px;
@@ -108,4 +116,8 @@ footer a {
 
 form.new_article, form.edit_article {
   margin-top: 40px;
+}
+
+.alert {
+  margin-top: 10px;
 }
