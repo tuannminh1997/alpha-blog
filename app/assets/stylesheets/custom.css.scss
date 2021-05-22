@@ -1,20 +1,58 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.container {
+//home page
+
+#home-container {
+  margin-top: 25px;
+}
+
+.jumbotron {
+  background-image: asset-url("jumbotron.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 480px;
+}
+
+a#btn-jumbotron {
+  background-color: black;
+  margin-top: 20px;
+}
+
+a#btn-jumbotron:hover {
+  background-color: #dc3545;
+}
+
+p.lead {
   margin-top: 40px;
 }
-.navbar {
 
-  background-color: #000000 !important;
+//common
 
+html,
+body {
+  height: 100%;
 }
 
-.navbar a:hover{
-  color: #dc3545;
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+#sticky-footer {
+  flex-shrink: unset;
+}
+
+.navbar {
+  background-color: black !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+}
+
+.navbar a:hover{
+  color: #dc3545;
 }
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
@@ -51,27 +89,6 @@ a.nav-link {
   text-align: center;
 }
 
-.jumbotron {
-  background-image: asset_url("jumbotron.jpg");
-  background-size: cover;
-  background-position: top center;
-  height: 450px;
-}
-
-.jumbotron h1 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.jumbotron h3 {
-  color: black;
-  margin-top: 120px;
-}
-
-
 .btn-xlarge {
   font-size: 1.2em;
   background-color: black;
@@ -96,35 +113,6 @@ a.nav-link {
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
   padding-bottom: 15px;
-}
-
-footer {
-  margin-top: 50px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a:hover {
-  color: #dc3545;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer li {
-  float: left;
-  margin-left: 15px;
-}
-
-footer a {
-  color: #dc3545;
 }
 
 form.new_article, form.edit_article {

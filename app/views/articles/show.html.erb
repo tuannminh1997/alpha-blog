@@ -1,12 +1,28 @@
-<h2 align="center">Title: <%= @article.title %></h2>
-
-<div class="card card-body bg-light col-sm-8 offset-sm-2">
-  <h4 class="center description"><strong>Description:</strong></h4>
-  <hr>
-  <%= simple_format(@article.description) %>
-  <div class="article-action">
-    <%= link_to "View all articles", articles_path, class:"btn btn-sm btn-success" %>
-    <%= link_to "Edit this article", edit_article_url(@article), class:"btn btn-sm btn-primary" %>
-    <%= link_to "Delete this article", article_path(@article), method: :delete, class:"btn btn-sm btn-danger", data: {confirm: "Do you want to delete this article ?"} %>
+<div id="page-content">
+  <h2 xmlns="http://www.w3.org/1999/html" class="center mt-4">Title: <%= @article.title %></h2>
+  <div class="container">
+    <div class="row justify-content-md-center">
+    <div class="col-8 mt-4 mb-2">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            by Minh Tuan
+          </div>
+          <div class="card-body">
+            <%= simple_format(@article.description) %>
+            <%= link_to "Edit this article", edit_article_url(@article), class: "btn btn-sm btn-outline-primary" %>
+            <%= link_to "Delete this article", article_path(@article), method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: "Do you want to delete this article ?" } %>
+          </div>
+          <div class="card-header text-muted">
+            <small>
+              Created <%= time_ago_in_words(@article.created_at) %> ago,
+              edited <%= time_ago_in_words(@article.updated_at) %> ago
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 offset-sm-5 mb-4">
+      <%= link_to "[ Back to articles listing ]", articles_path, class: "mb-4" %>
+    </div>
   </div>
 </div>

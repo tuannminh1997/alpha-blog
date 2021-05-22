@@ -1,31 +1,33 @@
-<%= render 'shares/errors', obj: @article %>
-<div class='row'>
-  <div class='col-md-12'>
-    <%= form_for @article do |f| %>
-      <div class="form-group row">
-        <div class="col-sm-2 col-form-label">
-          <%= f.label :title %>
+<div class="container">
+  <%= render 'shares/errors', obj: @article %>
+  <div class='row mt-4 mb-4'>
+    <div class='col-md-12'>
+      <%= form_with model: @article, local: true do |f| %>
+        <div class="form-group row">
+          <div class="col-sm-2 col-form-label">
+            <%= f.label :title, class: "font-weight-bold" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+          </div>
         </div>
-        <div class="col-sm-8">
-          <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+        <div class="form-group row">
+          <div class="col-sm-2 col-form-label">
+            <%= f.label :description, class: "font-weight-bold" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of article", autofocus: true %>
+          </div>
         </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <%= f.submit class: "btn btn-danger btn-lg" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-sm-5 offset-sm-5">
+        <%= link_to "[ Back to articles listing ]", articles_path, class: "mb-4" %>
       </div>
-      <div class="form-group row">
-        <div class="col-sm-2 col-form-label">
-          <%= f.label :description %>
-        </div>
-        <div class="col-sm-8">
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of article", autofocus: true %>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="offset-sm-2 col-sm-10">
-          <%= f.submit class: "btn btn-danger btn-lg" %>
-        </div>
-      </div>
-    <% end %>
-    <div class="col-sm-5 offset-sm-5">
-      <%= link_to "[ Back to articles listing ]", articles_path %>
     </div>
   </div>
 </div>
