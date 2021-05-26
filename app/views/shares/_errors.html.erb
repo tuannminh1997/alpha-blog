@@ -4,7 +4,7 @@
       <div class="alert alert-danger" role="alert">
         <h4>
           <%= pluralize(obj.errors.count, "error") %>
-          prohibited this article being saved:
+          prohibited this <%= obj.class.name.downcase %> being saved:
         </h4>
         <h6>
           <ul>
