@@ -1,0 +1,22 @@
+<div class="container">
+  <%= render 'shares/errors', obj: @user %>
+  <div class='row mt-4 mb-4'>
+    <div class='col-md-12'>
+      <%= form_with model: @user, method: :delete, local: true do |f| %>
+        <div class="form-group row">
+          <div class="col-sm-2 col-form-label">
+            <%= f.label :password, class: "font-weight-bold" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.password_field :password, class: "form-control", placeholder: "Retype your password to delete account .", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <%= f.submit "Confirm", class: "btn btn-danger btn-lg", data: { confirm: "Do you want to delete this account ?" }%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

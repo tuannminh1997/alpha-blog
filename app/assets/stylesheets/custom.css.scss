@@ -16,7 +16,7 @@
 
 a#btn-jumbotron {
   background-color: black;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 a#btn-jumbotron:hover {
@@ -24,7 +24,7 @@ a#btn-jumbotron:hover {
 }
 
 p.lead {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 //common
@@ -125,4 +125,16 @@ form.new_article, form.edit_article {
 
 span.navbar-toggler-icon {
   background-color: white;
+}
+
+
+//pagination
+
+.page-item.active .page-link {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.page-link {
+  color: #a09393
 }

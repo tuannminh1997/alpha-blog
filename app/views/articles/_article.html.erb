@@ -1,16 +1,21 @@
 <div class="container">
-  <% @article.each do |article| %>
+  <% @articles.each do |article| %>
     <div class="row justify-content-center">
-      <div class="col-8 mt-4">
+      <div class="col-8 mt-2">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-header font-italic">
-            by <%= article.user.username if article.user %>
+            <% if article.user %>
+              by <%= link_to article.user.username, user_path(article.user) %>
+            <% end %>
           </div>
           <div class="card-body">
-            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-danger" %></h5>
-            <p class="card-text"><%= (truncate(article.description, length: 100) { link_to "Continue", "#{article_path(article)}" }) %></p>
-            <%= link_to "Edit this article", edit_article_url(article), class: "btn btn-sm btn-outline-primary" %>
-            <%= link_to "Delete this article", article_path(article), method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: "Do you want to delete this article ?" } %>
+            <h5 class="card-title">Topic: <%= link_to article.title, article_path(article), class: "text-danger" %></h5>
+            <p class="card-text text-left"><%= (truncate(article.description, length: 100) { link_to "Continue", "#{article_path(article)}" }) %></p>
+            <%= link_to "View", article, class: "btn btn-sm btn-outline-success" %>
+            <% if logged_in? && (article.user == current_user || current_user.admin?) %>
+              <%= link_to "Edit", edit_article_url(article), class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Delete ", article_path(article), method: :delete, class: "btn btn-sm btn-outline-danger", data: { confirm: "Do you want to delete this article ?" } %>
+            <% end %>
           </div>
           <div class="card-header text-muted">
             <small>
@@ -21,6 +26,5 @@
         </div>
       </div>
     </div>
-
   <% end %>
 </div>
