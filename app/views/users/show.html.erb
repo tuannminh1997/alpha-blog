@@ -2,11 +2,11 @@
   <%= gravatar_for(@user, size: 100) %>
   <h2 xmlns="http://www.w3.org/1999/html" class="center mt-4"><%= @user.username %> </h2>
 
-    <% if logged_in? && @user == current_user %>
-      <div class="text-center mt-4 mb-4">
-        <%= link_to "Edit your profile", edit_user_path, class: "btn btn-primary" %>
-      </div>
-    <% end %>
+  <% if logged_in? && @user == current_user %>
+    <div class="text-center mt-4 mb-4">
+      <%= link_to "Edit your profile", edit_user_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
 
     <%= render 'articles/article' %>
   <% if @user.articles.count > 0 %>

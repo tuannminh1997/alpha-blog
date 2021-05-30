@@ -8,7 +8,15 @@
             <% if @article.user %>
               by <%= link_to @article.user.username, user_path(@article.user) %>
             <% end %>
-            <%= link_to gravatar_for(@article.user, size: 100), user_path(@article.user) %>
+            <%= link_to gravatar_for(@article.user, size: 75), user_path(@article.user) %>
+            <% if @article.categories.any? %>
+              <div class="mt-2">
+                <%= render @article.categories %>
+                <%# @article.categories.each do | test | %>
+                    <%#= link_to "#{test[:name]}", category_path(test), class:"badge badge-pill badge-info mr-1" %>
+                <%# end %>
+              </div>
+            <% end %>
           </div>
           <div class="card-body">
             <div class="card-text text-left">

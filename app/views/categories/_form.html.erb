@@ -1,0 +1,23 @@
+<div class="container">
+  <%= render 'shares/errors', obj: @category %>
+  <div class='row mt-4 mb-4'>
+    <div class='col-md-12'>
+      <%= form_with model: @category, local: true do |f| %>
+        <div class="form-group row">
+          <div class="col-sm-2 col-form-label">
+            <%= f.label :name, "Category name", class: "font-weight-bold" %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :name, class: "form-control", placeholder: "Enter a category name", autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <%= f.submit class: "btn btn-danger btn-lg" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

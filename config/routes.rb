@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get 'retype', to: 'users#retype'
   delete 'retype/:id(.:format)', to: 'users#delete'
+
+  resources :categories
 end
